@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ESP32 Radar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>● ESP32 RADAR</h1>
+    <span id="connection">CLOUD: CONNECTING...</span>
+  </header>
+
+  <main>
+    <section class="radar-card">
+      <canvas id="radar" width="700" height="420"></canvas>
+      <div class="info">
+        <span id="objStatus">Object: Out of Range</span>
+        <span id="angleLabel">Angle: 0°</span>
+        <span id="distLabel">Distance: --</span>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="btnAuto" class="active">AUTO SWEEP</button>
+      <button id="btnCustom">CUSTOM MOVEMENT</button>
+      <button id="btnBuzz" class="buzzbtn">BUZZ</button>
+      <button id="btnRange">DETECTION RANGE</button>
+    </section>
+
+    <section id="customPanel" class="panel hidden">
+      <label>Servo angle: <span id="angleValue">90</span>°</label>
+      <input id="angleSlider" type="range" min="0" max="180" value="90">
+    </section>
+
+    <section id="rangePanel" class="panel hidden">
+      <label>Detection threshold: <span id="rangeValue">40</span> cm</label>
+      <input id="rangeSlider" type="range" min="5" max="200" value="40">
+    </section>
+
+    <section class="panel">
+      <h2>Push notifications</h2>
+      <p id="notificationStatus">Not enabled</p>
+      <button id="enableNotifications">ENABLE PHONE NOTIFICATIONS</button>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
