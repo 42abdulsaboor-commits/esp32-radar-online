@@ -28,7 +28,7 @@ function databaseUrl(path, token) {
 
 function checkDeviceKey(request) {
   const expected = process.env.RADAR_DEVICE_KEY;
-  const supplied = request.headers.get('x-device-key');
+const supplied = request.headers['x-device-key'];
   return Boolean(expected && supplied && supplied === expected);
 }
 
