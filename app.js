@@ -18,7 +18,7 @@ import {
 */
 
 const firebaseConfig = {
-  apiKey: "PASTE_THE_API_KEY_FROM_FIREBASE",
+  apiKey: "AIzaSyBV7KUe1zblE-i0LHnsY4tTNgn2JutwciY",
   authDomain: "esp32-radar-4ad7b.firebaseapp.com",
   databaseURL: "https://esp32-radar-4ad7b-default-rtdb.firebaseio.com",
   projectId: "esp32-radar-4ad7b",
@@ -27,7 +27,7 @@ const firebaseConfig = {
   appId: "1:972770459215:web:871bec075652d49464743a"
 };
 
-const VAPID_KEY = "PASTE_PUBLIC_VAPID_KEY";
+const VAPID_KEY = "BOJ7S8G75l9yslohKKI8p-JenpHGcRAhpqNzXxHMcVjXXbp2GAf4bqmZFgK0jeJdBYkB6wk5UpzAi5jIk3FhpVI";
 
 const app = initializeApp(firebaseConfig);
 
