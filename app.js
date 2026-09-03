@@ -1,4 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 import {
   getDatabase, ref, onValue, set
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
@@ -17,18 +18,22 @@ import {
 */
 
 const firebaseConfig = {
-  apiKey: "PASTE_FIREBASE_API_KEY",
-  authDomain: "PASTE_PROJECT_ID.firebaseapp.com",
-  databaseURL: "PASTE_REALTIME_DATABASE_URL",
-  projectId: "PASTE_PROJECT_ID",
-  storageBucket: "PASTE_PROJECT_ID.firebasestorage.app",
-  messagingSenderId: "PASTE_MESSAGING_SENDER_ID",
-  appId: "PASTE_FIREBASE_APP_ID"
+  apiKey: "PASTE_THE_API_KEY_FROM_FIREBASE",
+  authDomain: "esp32-radar-4ad7b.firebaseapp.com",
+  databaseURL: "https://esp32-radar-4ad7b-default-rtdb.firebaseio.com",
+  projectId: "esp32-radar-4ad7b",
+  storageBucket: "esp32-radar-4ad7b.firebasestorage.app",
+  messagingSenderId: "972770459215",
+  appId: "1:972770459215:web:871bec075652d49464743a"
 };
 
 const VAPID_KEY = "PASTE_PUBLIC_VAPID_KEY";
 
 const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+await signInAnonymously(auth);
+
 const db = getDatabase(app);
 
 const connection = document.getElementById("connection");
